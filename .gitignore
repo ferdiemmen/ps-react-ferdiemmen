@@ -57,3 +57,18 @@ typings/
 # dotenv environment variables file
 .env
 .vscode
+
+# built component library
+/lib
+
+# built docs
+/docs
+
+# Generated component data
+/config/componentData.js
+
+# VSCode launch configuration
+launch.json
+
+# Webstorm
+.idea
