@@ -76,7 +76,7 @@ function getDirectories(filepath) {
 }
 
 function getFiles(filepath) {
-  return fs.readdirSync(filepath).filter(file => fs.statSync(path.join(filepath, file).isFile()));
+  return fs.readdirSync(filepath).filter(file => fs.statSync(path.join(filepath, file)).isFile());
 }
 
 function writeFile(filepath, content) {
