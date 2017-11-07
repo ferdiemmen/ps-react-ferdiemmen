@@ -59,3 +59,26 @@ table {
 .componentpage {
   margin-left: 275px;
 }
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,.3);
+}
+
+.modal-overlay.open {
+  display: flex;
+}
+
+.modal {
+  min-width: 250px;
+  min-height: 300px;
+  margin: 0 auto;
+  background: #FFF;
+}
