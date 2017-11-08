@@ -28,9 +28,10 @@ class Modal extends React.Component {
 
   render() {
     return (
-      <div className={`modal-overlay ${this.state.open ? 'open' : ''}`} onClick={this.close}>
+      <div className={`modal-container ${this.state.open ? 'open' : ''}`}>
+        <div className="modal-overlay" onClick={this.close}></div>
         <div className="modal">
-          foobar
+          {this.props.children}
         </div>
       </div>
     );
@@ -39,7 +40,11 @@ class Modal extends React.Component {
 
 Modal.propTypes = {
   /** Triggered when the modal is opened */
-  open: PropTypes.func
+  opened: PropTypes.func,
+  /** Trigger to open the modal */
+  open: PropTypes.bool,
+  /** Trigger to close the modal */
+  close: PropTypes.func,
 }
 
 export default Modal;

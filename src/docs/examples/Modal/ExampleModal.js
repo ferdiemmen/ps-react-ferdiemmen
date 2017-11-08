@@ -3,5 +3,9 @@ import React from 'react';
 import Modal from 'ps-react/Modal';
 
 export default function ExampleModal() {
-  return <Modal />
+  return (
+    <div>
+      <Modal>foobar die food</Modal>
+    </div>
+  )
 }

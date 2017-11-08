@@ -12,7 +12,7 @@ class Input extends React.Component {
   }
 
   handleOnChange(event) {
-    event.persist();  
+    event.persist();
 
     // Trigger onEmpty hook because input field has been cleared.
     if (!event.target.value && Object.prototype.hasOwnProperty.call(this.props, 'onEmpty')) {
@@ -21,7 +21,7 @@ class Input extends React.Component {
     };
 
     // Trigger onChange hook returning current value.
-    this.props.onChange(event.target.value);
+    this.props.onChange && this.props.onChange(event.target.value);
   }
 
   render() {
@@ -46,7 +46,7 @@ Input.propTypes = {
 };
 
 Input.defaultProps = {
-  debounceDelay: 100,
+  debounceDelay: 0,
 }
 
 export default Input;
