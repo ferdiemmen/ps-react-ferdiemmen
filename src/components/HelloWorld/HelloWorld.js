@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 /** A super lame component that says Hello with a custom message */
-function HelloWorld({message}) {
+const HelloWorld = ({message}) => {
   return <div>Hello {message}</div>;
 }
 

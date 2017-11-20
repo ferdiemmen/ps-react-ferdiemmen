@@ -10,7 +10,7 @@ class Modal extends React.Component {
     super(props);
 
     this.state = {
-      open: true,
+      open: false,
     }
   }
 
@@ -29,18 +29,19 @@ class Modal extends React.Component {
   }
 
   render() {
+    const { buttons } = this.props.options;
+
     return (
       <div ref={modal => _modal = this} className={`modal-container ${this.state.open ? 'open' : ''}`}>
         <div className="modal-overlay" onClick={this.close}></div>
         <div className="modal">
           {this.props.children}
           {
-            this.props.buttons
-              .map(button => {
-                return (
-                  <button key={button.name} onClick={button.action}>{button.name}</button>
-                );
-              })
+            buttons.map(button => {
+              return (
+                <button key={button.name} onClick={button.action}>{button.name}</button>
+              );
+            })
           }
         </div>
       </div>
@@ -53,14 +54,16 @@ Modal.propTypes = {
   open: PropTypes.bool,
   /** Trigger to close the modal */
   close: PropTypes.func,
-  buttons: PropTypes.array,
+  options: PropTypes.object,
 }
 
 Modal.defaultProps = {
-  buttons: [{
-    name: 'Close',
-    action: () => _modal.close(),
-  }],
+  options: {
+    buttons: [{
+      name: 'Close',
+      action: () => _modal.close(),
+    }],
+  }
 }
 
 export default Modal;

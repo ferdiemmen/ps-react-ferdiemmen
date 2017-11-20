@@ -9,6 +9,23 @@ export default function ExampleModal() {
     _modal.toggleVisibility();
   }
 
+  const apenbroek = () => {
+    alert('apenbroek');
+  }
+
+  const modalOptions = {
+    buttons: [
+      {
+        name: 'Close',
+        action: () => _modal.close(),
+      },
+      {
+        name: 'Say "Apenbroek"!',
+        action: apenbroek
+      }
+    ]
+  };
+
   return (
     <div>
         <p>
@@ -16,7 +33,7 @@ export default function ExampleModal() {
             Show Modal
           </button>
         </p>
-      <Modal ref={modal => _modal = modal}>foobar die food</Modal>
+      <Modal ref={modal => _modal = modal} options={modalOptions}>foobar die food</Modal>
     </div>
   )
 }
