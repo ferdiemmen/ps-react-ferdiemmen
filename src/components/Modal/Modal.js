@@ -54,7 +54,14 @@ Modal.propTypes = {
   open: PropTypes.bool,
   /** Trigger to close the modal */
   close: PropTypes.func,
-  options: PropTypes.object,
+  /** An object defining options for the modal */
+  options: PropTypes.shape({
+    /** Definition of buttons for the modal */
+    buttons: PropTypes.arrayOf(PropTypes.shape({
+      name: PropTypes.string,
+      action: PropTypes.func
+    }))
+  }),
 }
 
 Modal.defaultProps = {
